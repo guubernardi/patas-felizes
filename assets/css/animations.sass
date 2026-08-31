@@ -1,0 +1,37 @@
+@keyframes girando
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+    visibility: visible
+  100%
+    opacity: 0
+    visibility: hidden
+
+// Estado inicial da diretiva v-revelar. A classe so e aplicada pelo JS no
+// cliente, entao sem JS o conteudo aparece normalmente.
+.revelar
+  opacity: 0
+  transform: translateY(26px)
+  transition: opacity 0.7s ease, transform 0.7s ease
+
+.revelar.revelado
+  opacity: 1
+  transform: translateY(0)
+
+@media (prefers-reduced-motion: reduce)
+  .revelar
+    opacity: 1
+    transform: none
